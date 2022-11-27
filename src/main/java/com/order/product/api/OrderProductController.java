@@ -16,7 +16,7 @@ public class OrderProductController implements OrderProductManager {
 	@Override
 	public List<ProductDto> getProducts() {
 		log.info("getProducts()");
-		List<ProductDto> productDtoList = service.getProducts();
+		var productDtoList = service.getProducts();
 		log.debug("getProducts() finished");
 		return productDtoList;
 	}
@@ -31,7 +31,7 @@ public class OrderProductController implements OrderProductManager {
 	@Override
 	public ProductDto getProductById(Long productId) {
 		log.info("getProductById({})", productId);
-		ProductDto productDto = service.getProductById(productId);
+		var productDto = service.getProductById(productId);
 		log.debug("getProductById() finished");
 		return productDto;
 	}
