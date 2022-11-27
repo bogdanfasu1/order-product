@@ -2,9 +2,7 @@ package com.order.product.mapper;
 
 import com.order.product.api.dto.ProductDto;
 import com.order.product.entity.ProductEntity;
-import org.springframework.stereotype.Component;
 
-@Component
 public class ProductMapper {
 
 	public static ProductEntity productDtoToEntity(ProductDto productDto) {

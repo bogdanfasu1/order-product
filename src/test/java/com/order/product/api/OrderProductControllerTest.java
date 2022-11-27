@@ -22,7 +22,7 @@ class OrderProductControllerTest {
 	private static final String PATH = "/orders";
 	private static final String PRODUCT_ID = "/1";
 	private static final String NAME = "name";
-	private static final String DESCRIPTON = "desc";
+	private static final String DESCRIPTION = "desc";
 	private static final Double PRICE = 2.5;
 	private ObjectMapper objectMapper;
 
@@ -103,15 +103,15 @@ class OrderProductControllerTest {
 				.andExpect(status().isBadRequest());
 	}
 
-	private static ProductDto getProductDto() {
+	private ProductDto getProductDto() {
 		return ProductDto.builder()
 				.price(PRICE)
-				.description(DESCRIPTON)
+				.description(DESCRIPTION)
 				.name(NAME)
 				.build();
 	}
 
-	private static ProductDto getWrongProductDto() {
+	private ProductDto getWrongProductDto() {
 		return ProductDto.builder()
 				.price(PRICE)
 				.name(NAME)

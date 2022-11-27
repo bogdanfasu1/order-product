@@ -25,7 +25,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 	@ExceptionHandler(value = ProductNotFoundException.class)
 	public ResponseEntity<Object> springHandleNotFound(ProductNotFoundException exception) throws IOException {
 		log.error(exception.getMessage(), exception);
-		return ResponseEntity.status(404).body(new ErrorMessage(exception.getMessage()));
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorMessage(exception.getMessage()));
 	}
 
 	@Override
