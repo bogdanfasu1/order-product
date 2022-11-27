@@ -47,4 +47,10 @@ public class ProductServiceImpl implements ProductService {
 		repository.save(entity);
 	}
 
+	@Override
+	public void deleteProduct(long productId) {
+		if (repository.existsById(productId))
+			repository.deleteById(productId);
+		else throw new ProductNotFoundException(productId);
+	}
 }

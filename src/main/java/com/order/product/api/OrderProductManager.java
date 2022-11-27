@@ -27,4 +27,7 @@ public interface OrderProductManager {
 	@PutMapping(path = "/{productId}")
 	void modifyProduct(@Valid @RequestBody ProductDto productDto, @PathVariable long productId);
 
+	@ResponseStatus(value = HttpStatus.OK)
+	@DeleteMapping(path = "/{productId}")
+	void deleteProduct(@PathVariable long productId);
 }

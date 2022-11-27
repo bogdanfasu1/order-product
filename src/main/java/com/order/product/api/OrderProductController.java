@@ -42,4 +42,11 @@ public class OrderProductController implements OrderProductManager {
 		service.modifyProduct(productDto, productId);
 		log.debug("modifyProduct() finished");
 	}
+
+	@Override
+	public void deleteProduct(long productId) {
+		log.info("deleteProduct({})", productId);
+		service.deleteProduct(productId);
+		log.debug("deleteProduct() finished");
+	}
 }
