@@ -11,7 +11,6 @@ import java.util.List;
 @RequestMapping("/orders")
 public interface OrderProductManager {
 
-
 	@ResponseStatus(code = HttpStatus.OK)
 	@GetMapping
 	List<ProductDto> getProducts();
@@ -24,5 +23,8 @@ public interface OrderProductManager {
 	@GetMapping(path = "/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
 	ProductDto getProductById(@PathVariable Long productId);
 
+	@ResponseStatus(value = HttpStatus.OK)
+	@PutMapping(path = "/{productId}")
+	void modifyProduct(@Valid @RequestBody ProductDto productDto, @PathVariable long productId);
 
 }

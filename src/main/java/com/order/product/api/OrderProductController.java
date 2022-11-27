@@ -35,4 +35,11 @@ public class OrderProductController implements OrderProductManager {
 		log.debug("getProductById() finished");
 		return productDto;
 	}
+
+	@Override
+	public void modifyProduct(ProductDto productDto, long productId) {
+		log.info("modifyProduct({})", productDto);
+		service.modifyProduct(productDto, productId);
+		log.debug("modifyProduct() finished");
+	}
 }

@@ -2,6 +2,7 @@ package com.order.product.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -33,9 +34,12 @@ public class BasicConfiguration {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.anyRequest()
-				.authenticated()
+				.antMatchers(HttpMethod.GET, "/orders/**").hasRole("USER")
+				.antMatchers(HttpMethod.POST, "/orders").hasRole("ADMIN")
+				.antMatchers(HttpMethod.PUT, "/orders/**").hasRole("ADMIN")
+				.antMatchers(HttpMethod.DELETE, "/orders/**").hasRole("ADMIN")
 				.and()
+				.csrf().disable()
 				.httpBasic();
 		return http.build();
 	}

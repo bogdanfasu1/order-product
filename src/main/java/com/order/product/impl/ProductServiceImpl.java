@@ -38,4 +38,13 @@ public class ProductServiceImpl implements ProductService {
 				.orElseThrow(() -> new ProductNotFoundException(productId));
 	}
 
+	@Override
+	public void modifyProduct(ProductDto productDto, long productId) {
+		val entity = repository.findById(productId).orElseThrow(() -> new ProductNotFoundException(productId));
+		entity.setName(productDto.getName());
+		entity.setDescription(productDto.getDescription());
+		entity.setPrice(productDto.getPrice());
+		repository.save(entity);
+	}
+
 }
