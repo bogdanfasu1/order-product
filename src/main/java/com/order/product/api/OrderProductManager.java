@@ -20,4 +20,9 @@ public interface OrderProductManager {
 	@PostMapping
 	void addProduct(@RequestBody @Valid ProductDto productDto);
 
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping(path = "/{productId}", produces = MediaType.APPLICATION_JSON_VALUE)
+	ProductDto getProductById(@PathVariable Long productId);
+
+
 }

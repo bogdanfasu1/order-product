@@ -10,4 +10,5 @@ public interface ProductService {
 
 	void addProduct(ProductDto productDto);
 
+	ProductDto getProductById(Long productId);
 }
