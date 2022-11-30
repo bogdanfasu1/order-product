@@ -1,6 +1,9 @@
 # Order Products Management
 
-The `ProductApplication` its an ORDER SpringBoot application.
+The `ProductApplication` its an Product Order SpringBoot application.
+We have an API for create a new product, one for getAll, one for getById, deleteById and updateById.
+For local env we are using in memory db, and for production we are using a Postgres DB, so for that we need to run the postgres image, there is a `docker-compose.yml` file for that.
+
 
 ## Build
 
@@ -11,7 +14,7 @@ mvn package
 ## Run
 
 ```bash
-java -jar target/product-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=prod,db-prod target/product-0.0.1-SNAPSHOT.jar
 ```
 
 ## Run Tests
@@ -20,8 +23,3 @@ java -jar target/product-0.0.1-SNAPSHOT.jar
 mvn test
 ```
 
-# Documentation
-
-Please check the main documentation for Order Product Management at:
-
-https://wiki.ing.com/display/order

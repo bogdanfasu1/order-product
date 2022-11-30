@@ -12,6 +12,8 @@ info:
     name: ${spring.application.name}
 
 spring:
+  flyway:
+    baselineOnMigrate: true
   main:
     banner-mode: "off"
   jackson:

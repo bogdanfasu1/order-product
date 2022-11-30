@@ -1,0 +1,20 @@
+logging:
+  level:
+    org.springframework: info
+    com.order.product: debug
+server:
+  port: 19113
+  error:
+    include-message: always
+
+info:
+  application:
+    name: ${spring.application.name}
+
+spring:
+  flyway:
+    baselineOnMigrate: true
+  main:
+    banner-mode: "off"
+  jackson:
+    default-property-inclusion: non_null

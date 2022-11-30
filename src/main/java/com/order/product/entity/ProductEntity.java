@@ -8,9 +8,10 @@ import javax.validation.constraints.Size;
 @Builder
 @Getter
 @Setter
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "PRODUCT")
+@Entity
 public class ProductEntity {
 	@Id
 	@SequenceGenerator(name = "S_PRODUCT_0", sequenceName = "S_PRODUCT_0", allocationSize = 10)
